@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!-- 1. list 출력하는 2개의 방법 기존 vs th 사용
+    <h4>[[${list}]]</h4>
+    <hr />
+    <h4 th:text="${list}"></h4>
+
+
+    2. th:each vs th:block
+    <ul>
+        <li th:each="str: ${list}" th:text="${str}"></li>
+    </ul>
+
+        <ul>
+            <th:block th:each="str: ${list}">
+                <li>[[${str}]]</li>
+            </th:block>
+        </ul>
+
+            <ul>
+        <li th:each="str,status: ${list}">
+            <span th:if="${status.odd}"> ODD -- [[${str}]]</span>
+            <span th:unless="${status.odd}"> EVEN -- [[${str}]]</span>
+        </li>
+    </ul>
+
+    홀/짝
+    <ul>
+        <li th:each="str,status: ${list}">
+            <span th:if="${status.odd}"> ODD -- [[${str}]]</span>
+            <span th:unless="${status.odd}"> EVEN -- [[${str}]]</span>
+        </li>
+    </ul>
+
+    이항연산자
+        <ul>
+        <li th:each="str, status: ${list}">
+            <sapn th:text="${status.odd} ? 'ODD ---' + ${str}"></sapn>
+        </li>
+    </ul>
+
+    삼항연산자
+        <ul>
+        <li th:each="str, status: ${list}">
+            <span th:text="${status.odd} ?'ODD ---' + ${str} : 'EVEN ---' + ${str}">
+
+            </span>
+
+        </li>
+    </ul>
+
+    스위치 케이스
+        <ul>
+        <li th:each="str, status: ${list}">
+            <th:block th:block th:switch="${status.index % 3}">
+                <span th:case="0">1</span>
+                <span th:case="1">2</span>
+                <span th:case="2">3</span>
+            </th:block>
+        </li>
+    </ul>
+
+    원하는페이지로 이동
+    <a th:href="@{/hello}">Go to /hello</a>
+
+    가는 페이지에 가져갈 데이터 get
+    <a th:href="@{/hello(name='AAA', age=16)}">Go to /hello</a>
+
+    자동 URL 처리
+    <a th:href="@{/hello(name='한글처리', age=16)}">Go to /hello</a>
+    test  -->
+
+    <a th:href="@{/hello(type=${ {'AA', 'BB', 'CC'} }, age=16 )}">Go to /hello</a>
+
+
+    </body>
+
+    </html>

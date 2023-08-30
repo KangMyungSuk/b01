@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thmeleaf/layout"
+      layout:decorate="~{layout/layout1.html}">
+
+<div layout:fragment="content">
+
+    <h1>ex3.html</h1>
+
+</div>
+
+<script layout:fragement="script" th:inline="javascript">
+
+    const arr = [[${arr}]]
+
+</script>
